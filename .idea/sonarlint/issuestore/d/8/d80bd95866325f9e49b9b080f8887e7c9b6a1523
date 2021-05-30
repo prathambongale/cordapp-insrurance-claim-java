@@ -1,0 +1,8 @@
+
+`	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(§ûªàúÿÿÿÿ
+8
+java:S4738""Use "java.util.List.of()" instead.(îúÇĞ
+t
+java:S2142)"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+F
+java:S5960'"+Remove this assertion from production code.(Ô¥‰ÿüÿÿÿÿ
