@@ -9,5 +9,5 @@ Insurance company should receive the policy fir number and should automatically 
 or certain scenarios.
 
 There should be any user interface for user, police and insurance company 
-to apply claim, verify claim, approve claim respectively. 
+to take insurance policy and apply claim, verify claim, approve claim respectively. 
 
