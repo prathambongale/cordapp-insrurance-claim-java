@@ -17,7 +17,7 @@ buildscript {//properties that you need to build the project
         //springboot
         spring_boot_version = '2.0.2.RELEASE'
         spring_boot_gradle_plugin_version = '2.0.2.RELEASE'
-        google_collect_version = '1.0'
+        //google_collect_version = '1.0'
         google_guava_version = '28.0-jre'
     }
 
@@ -85,7 +85,7 @@ dependencies {
     cordaCompile "org.apache.logging.log4j:log4j-slf4j-impl:${log4j_version}"
     cordaCompile "org.apache.logging.log4j:log4j-web:${log4j_version}"
     cordaCompile "org.slf4j:jul-to-slf4j:$slf4j_version"
-    cordaCompile "com.google.common:google-collect:$google_collect_version"
+    //cordaCompile "com.google.common:google-collect:$google_collect_version"
     cordaCompile "com.google.guava:guava:$google_guava_version"
 }
 

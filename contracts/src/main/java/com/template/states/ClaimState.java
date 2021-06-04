@@ -1,18 +1,24 @@
 package com.template.states;
 
+import com.template.contracts.ClaimContract;
+import net.corda.core.contracts.Amount;
 import net.corda.core.contracts.BelongsToContract;
+import net.corda.core.contracts.ContractState;
+import net.corda.core.contracts.Issued;
 import net.corda.core.identity.AbstractParty;
 import net.corda.core.identity.Party;
 
+import java.time.Instant;
 import java.util.Arrays;
+import java.util.Currency;
 import java.util.List;
 import java.util.UUID;
 
 // ***************
 // * Claim State *
 // ***************
-//@BelongsToContract()
-public class ClaimState {
+@BelongsToContract(ClaimContract.class)
+public class ClaimState implements ContractState {
 
     //private variables
     private Party applicantNode;
@@ -27,19 +33,21 @@ public class ClaimState {
     private String insuranceID;
     private String type;
     private String subType;
-    private Integer value;
+    private Integer claimAmount;
     private String reason;
     private String firNo;
     private Integer approvedAmount;
     private String insuranceStatus;
     private String referenceID;
     private UUID linearId;
+    private Amount<Issued<Currency>> faceValue;
+    private Instant dateOfAccident;
 
     /* Constructor of your Claim state */
     public ClaimState(Party applicantNode, Party insurerNode, Party policeNode, Party repairNode, Party doctorNode,
                       Party underwriterNode, String fname, String lname, String address, String insuranceID,
-                      String type, String subType, Integer value, String reason, String firNo, Integer approvedAmount,
-                      String insuranceStatus, String referenceID, UUID linearId) {
+                      String type, String subType, Integer claimAmount, String reason, String firNo,
+                      Integer approvedAmount, String insuranceStatus, String referenceID, UUID linearId) {
         this.applicantNode = applicantNode;
         this.insurerNode = insurerNode;
         this.policeNode = policeNode;
@@ -52,7 +60,7 @@ public class ClaimState {
         this.insuranceID = insuranceID;
         this.type = type;
         this.subType = subType;
-        this.value = value;
+        this.claimAmount = claimAmount;
         this.reason = reason;
         this.firNo = firNo;
         this.approvedAmount = approvedAmount;
@@ -110,8 +118,8 @@ public class ClaimState {
         return subType;
     }
 
-    public Integer getValue() {
-        return value;
+    public Integer getClaimAmount() {
+        return claimAmount;
     }
 
     public String getReason() {
